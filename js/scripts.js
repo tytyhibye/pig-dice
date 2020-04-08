@@ -1,9 +1,7 @@
 // Back-end logic //
+
 function Player() {
 this.score = 0;
-
-
-
 }
 
 function Game() {
@@ -16,7 +14,7 @@ Game.prototype.addToScore = function() {
   currentRoll = this.roll();
   if (currentRoll != 1 || this.playerSwitch != true) {
     this.playersScore += currentRoll;
-    
+    // console.log(this.playersScore);
   }
 }
 
@@ -24,7 +22,6 @@ Game.prototype.switchPlayers = function() {
   this.currentPlayer = !this.currentPlayer
 
 }
-
 //   this.currentPlayer === 1 ? 2 : 1;
 // }
 
@@ -34,21 +31,24 @@ Game.prototype.roll = function() {
   return roll;
 }
 
-// function Player() {
-//   this.playerScore = 0;
-// }
 
 // Front-end logic //
-let game = new Game();
-game.roll();
-game.addToScore();
 
-function clickToRoll() {   // roll function
+// game.roll();
+// game.addToScore();
+
+function clickToRoll() { 
+  let game = new Game();
+    // roll function
   $("#img").click(function(){
-    console.log(game.addToScore());
+    game.addToScore();
+    $("#player-score").text(game.playersScore);
+    console.log(game.playersScore);
+
     var buttons = $("#buttons");
     buttons.empty();
     buttons.append("<button id='holdButton'>Hold</button>");
+    
   });
 }
 $("#buttons").on("click", "#holdButton", function(){
@@ -56,7 +56,6 @@ $("#buttons").on("click", "#holdButton", function(){
   $("#holdButton").hide();
 });
 
-// game.randomDice()
 $(document).ready(function() {
   clickToRoll();
   $("form#enter-name").submit(function(event) {
@@ -65,5 +64,6 @@ $(document).ready(function() {
     $("#enter-name").fadeToggle();
     $("#player-name").html("<h3>" + playerName + "</h3>");
     $(".show-game").show();
+  
   });
 });
