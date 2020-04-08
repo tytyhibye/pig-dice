@@ -27,3 +27,6 @@ img:active {
   height: 20em;
   display: block;
 }
+.row-3 {
+  bottom: 0;
+}

@@ -8,19 +8,16 @@ function Game() {
 
 Game.prototype.addToScore = function(roll) {
   currentRoll = this.roll();
-  if (currentRoll != 1) {
+  if (currentRoll != 1 || this.playerSwitch != true) {
     this.playersScore = this.playersScore + currentRoll;
     console.log(this.playersScore);
-  } else if (this.playerSwtich === true){
+  } else {
     
   }
-  // if (roll === 1) {
-  //   this.over =true;
-  //   this.points = 0;
-  // } else {
-  //   this.points += roll;
-  // }
-  // return roll;
+}
+
+Game.prototype.switchPlayers = function() {
+  this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
 }
 
 
@@ -35,12 +32,18 @@ game.addToScore();
 
 // Front-end logic //
 
-// function clickToRoll() {   // roll function
-//   $("#dice").on("click","img", function(){
-//     roll(dice);
-//     console.log(roll)
-//   });
-// }
+function clickToRoll() {   // roll function
+  $("#dice").on("click","img", function(){
+    roll(dice);
+    var buttons = $("#buttons");
+  buttons.empty();
+  buttons.append("<button id='holdButton' type="btn btn-danger btn-animated">Hold</button>");
+  });
+}
+$("#buttons").on("click", "#holdButton", function(){
+  game.holdFunction(this.currentPlayer);
+  $("#holdButton").hide();
+});
 
 // game.randomDice()
 $(document).ready(function() {
