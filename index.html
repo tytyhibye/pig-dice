@@ -14,19 +14,32 @@
         <br>
         <h3>FIRST PLAYER TO 100 WINS!</h3>
         <br>
-        <div class="player-name">
+        <form id="enter-name">
           <label id="nameHolder">Please Enter Your Name</label>
           <input type="text" id="name">
           <button type="submit" class="btn btn-danger btn-animated">Bring It Piggy</button>
+        </form>
+        <div class="absoluteBox">
+          <div class="col-sm-4">
+            <div id="player-name"></div>
+          </div>
+          <div class="col-sm-4">
+            <h3>VS</h3>
+          </div>
+          <div class="col-sm-4">
+            <div id="computer-name">
+              <p>Das Piggy</p>
+            </div>
+          </div>
+          <div id="score-card" type="text" style="height:auto; width:auto; background-color: antiquewhite; font-size: auto;">
+          </div>
+          <div class="col-sm-12">
+            <div id="dice">
+              <h4>*Click The Dice To Roll*</h4>
+              <img src="https://i.postimg.cc/jdGW8Zkw/hiclipart-com.png">
+            </div>
+          </div>
         </div>
-        <div id="dice">
-          <img src="https://i.postimg.cc/jdGW8Zkw/hiclipart-com.png">
-        </div>
-
-        <br>
-        <div id="score-card" type="text" style="height:auto; width:auto; background-color: antiquewhite; font-size: auto;">
-        </div>
-    
       </div>
     </div>
     <script src="js/jquery-3.4.1.js"></script>

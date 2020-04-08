@@ -8,3 +8,13 @@
 img {
   width: 20vw;
 }
+img:active {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(22, 22, 22, 0.801);
+}
+.absoluteBox {
+  bottom: 0;
+}
+#computer-name {
+  display: none;
+}
