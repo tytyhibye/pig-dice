@@ -19,24 +19,38 @@
           <input type="text" id="name">
           <button type="submit" class="btn btn-danger btn-animated">Bring It Piggy</button>
         </form>
-        <div class="absoluteBox">
-          <div class="col-sm-4">
-            <div id="player-name"></div>
-          </div>
-          <div class="col-sm-4">
-            <h3>VS</h3>
-          </div>
-          <div class="col-sm-4">
-            <div id="computer-name">
-              <p>Das Piggy</p>
+        <div class="show-game">
+          <div class="row-1">
+            <div class="col-sm-4">
+              <div id="player-name"></div>
+            </div>
+            <div class="col-sm-4">
+                <h3>VS</h3>
+            </div>
+            <div class="col-sm-4">
+                <h3>Das Piggy</h3>
             </div>
           </div>
-          <div id="score-card" type="text" style="height:auto; width:auto; background-color: antiquewhite; font-size: auto;">
-          </div>
-          <div class="col-sm-12">
-            <div id="dice">
-              <h4>*Click The Dice To Roll*</h4>
-              <img src="https://i.postimg.cc/jdGW8Zkw/hiclipart-com.png">
+          <div class="row-2">
+            <div class="col-sm-4">
+              <div id="player-score-card">
+                <h4><b>Player Score</b></h4>
+                <br>
+                <span id = "player-score"type="text" style="height:auto; width:auto; background-color: antiquewhite; font-size: auto;"></span>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div id="dice">
+                <h4>*Click The Dice To Roll*</h4>
+                <img src="https://i.postimg.cc/jdGW8Zkw/hiclipart-com.png">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div id="comp-score-card">
+                <h4><b>D.P. Score</b></h4>
+                <br>
+                <span type="text" style="height:auto; width:auto; background-color: antiquewhite; font-size: auto;"></span>
+              </div>
             </div>
           </div>
         </div>

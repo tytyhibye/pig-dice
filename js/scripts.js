@@ -2,15 +2,17 @@
 function Game() {
   this.playersScore = 0;
   this.compScore = 0;
+  this.currentPlayer = 1;
+  this.playerSwtich = false;
 }
 
 Game.prototype.addToScore = function(roll) {
   currentRoll = this.roll();
-  console.log(currentRoll);
-  
-  if (roll != 1) {
-    this.playersScore = this.playersScore + roll;
+  if (currentRoll != 1) {
+    this.playersScore = this.playersScore + currentRoll;
     console.log(this.playersScore);
+  } else if (this.playerSwtich === true){
+    
   }
   // if (roll === 1) {
   //   this.over =true;
@@ -46,7 +48,7 @@ $(document).ready(function() {
     event.preventDefault();
     var playerName = $("input#name").val();
     $("#enter-name").fadeToggle();
-    $("#player-name").text(playerName);
-    $("#computer-name").fadeToggle();
+    $("#player-name").html("<h3>" + playerName + "</h3>");
+    $(".show-game").show();
   });
 });
