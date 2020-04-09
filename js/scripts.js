@@ -63,7 +63,7 @@ $(document).ready(function() {
     var playerName = $("input#name").val();
     $("#enter-name").fadeOut(200);
     $("#player-name").html("<h3 class='tags'>" + playerName + "</h3>");
-    $(".show-game").fadeIn(2000);
+    $(".show-game").fadeIn(1700);
   
   });
 });

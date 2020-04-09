@@ -21,17 +21,19 @@ img:active {
 }
 #player-score-card {
   border: double brown;
+  border-width: 4px;
   width: 100%;
   height: 20em;
   display: block;
-  background-color: rgba(250, 235, 215, 0.562);
+  background-color: rgba(250, 235, 215, 0.301);
 }
 #comp-score-card {
   border: double brown;
+  border-width: 4px;
   width: 100%;
   height: 20em;
   display: block;
-  background-color: rgba(250, 235, 215, 0.562);
+  background-color: rgba(250, 235, 215, 0.301);
 }
 #holdButton {
   width: 90px;
@@ -148,26 +150,4 @@ img:active {
  background-color:  rgb(71, 47, 47);
  transform: translateY(5px);
  animation: blur 1.25s ease-in-out;
-}
-@keyframes blur {
-  from {
-    box-shadow:0px 0px 10px #fff,
-      0px 0px 10px #fff, 
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 50px #fff,
-      0px 0px 50px #fff,
-      0px 0px 50px rgb(184, 183, 123),
-      0px 0px 150px rgb(184, 183, 123),
-      0px 10px 100px rgb(184, 183, 123),
-      0px 10px 100px rgb(184, 183, 123),
-      0px 10px 100px rgb(184, 183, 123),
-      0px 10px 100px rgb(184, 183, 123),
-      0px -10px 100px rgb(184, 183, 123),
-      0px -10px 100px rgb(184, 183, 123);
-  }
 }
