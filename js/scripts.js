@@ -1,78 +1,80 @@
 // Back-end logic //
 
-function Game() {
-  this.players = ["player", "comp"];
+function Game(currentPlayer) {
+  this.players = ['player', 'comp'];
   this.roundScore = 0;
   this.playersScore = 0;
-  this.playerSwtich = false;
+  this.currentPlayer = currentPlayer;
 }
 
-Game.prototype.addToScore = function() {
+Game.prototype.addToScore = function () {
   currentRoll = this.roll();
   if (currentRoll != 1 || this.playerSwitch != true) {
     this.roundScore += currentRoll;
     // console.log(this.roundScore);
+  } else if (currentRoll === 1) {
   }
-}
+};
 
-Game.prototype.switchPlayers = function() {
-  for(var i= 0; i<this.players.length; i ++) {
-    if(currentPlayers[i] === "player"){
-      currentPlayer = 1;
-      $("#player-score").text("0");
-    } else currentPlayer = 0; {
-      $("#comp-score").text("0");
+Game.prototype.switchPlayers = function () {
+  for (var i = 0; i < this.players.length; i++) {
+    if (i === this.players[0]) {
+      currentPlayer = this.players[1];
+      $('#player-score').text('0');
+    } else {
+      currentPlayer = this.players[0];
+      $('#comp-score').text('0');
     }
   }
   this.roundScore = 0;
-}
+};
 //   this.currentPlayer === 1 ? 2 : 1;
 // }
 // this.currentPlayer = !this.currentPlayer
 
-
-Game.prototype.roll = function() {
-  let roll = Math.floor(Math.random()*6 + 1);
+Game.prototype.roll = function () {
+  let roll = Math.floor(Math.random() * 6 + 1);
   return roll;
-}
-
+};
 
 // Front-end logic //
 
 // game.roll();
 // game.addToScore();
 
-function clickToRoll() { 
-  let game = new Game();
-    // roll function
-  $("#img").click(function(){
-    game.addToScore();
-    $("#player-score").text(game.roundScore);
-    console.log(game.roundScore);
+Game.prototype.clickToRoll = function () {
+  // roll function
+  var that = this;
+  $('#img').click(function () {
+    that.addToScore();
+    if (currentPlayer === that.players[0]) {
+    $('#player-score').text(that.roundScore);
+    } else {
+      $('#comp-score').text(that.roundScore);
+    }
 
-    var buttons = $("#buttons");
+    var buttons = $('#buttons');
     buttons.empty();
     buttons.append("<button id='holdButton'>HOLD</button>");
-    
   });
-}
+};
 
-$(document).ready(function() {
-  clickToRoll();
-  let game = Game();
-  $("form#enter-name").submit(function(event) {
+$(document).ready(function () {
+  let game = new Game();
+  game.clickToRoll();
+  $('form#enter-name').submit(function (event) {
     event.preventDefault();
-    var playerName = $("input#name").val();
-    this.players = [4, 5, 6];
-    // console.log(players);
+    var playerName = $('input#name').val();
+    currentPlayer = game.players[0];
+    console.log(currentPlayer);
     // console.log(this.players);
-    $("#enter-name").fadeOut(200);
-    $("#player-name").html("<h3 class='tags'>" + playerName + "</h3>");
-    $(".show-game").fadeIn(1700);
-  }); 
-  $("#buttons").on("click", "#holdButton", (function (event) {
+    $('#enter-name').fadeOut(200);
+    $('#player-name').html("<h3 class='tags'>" + playerName + '</h3>');
+    $('.show-game').fadeIn(1700);
+  });
+  $('#buttons').on('click', '#holdButton', function (event) {
     event.preventDefault();
     game.switchPlayers();
-    $("#holdButton").fadeOut(1000);
-  }));
+    $('#holdButton').fadeOut(1000);
+  });
 });
