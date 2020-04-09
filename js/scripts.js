@@ -7,27 +7,30 @@ function Game() {
 }
 
 Game.prototype.addToScore = function () {
-  currentRoll = this.roll();
+  var currentRoll = this.roll();
+  //LL: Try to avoid global variables (any created without 'var' ahead)
   if (currentRoll != 1) {
     this.roundScore += currentRoll;
   } else if (currentRoll === 1) {
-    totalRound = 0;
-    console.log("rolled a 1");
+    this.roundScore = 0;
+    // console.log("rolled a 1");
   }
-    totalRound = this.roundScore;       //**THIS IS NEW**/
-    return totalRound;                  //**THIS IS NEW**/
+    var totalRound = this.roundScore;       //**THIS TRANSITION WORKS**/
+    //LL: See note on 11
+    return totalRound; 
+    //LL: Could just say 'return this.roundScore' or even better, don't return anything and just access Game.roundScore afterward because it will have been modified                 
 };
 
 Game.prototype.addTotal = function () {
   
-  if (this.currentPlayer === true) {      //**THIS IS NEW**/
+  if (this.currentPlayer === true) {      
     parseInt(this.playersScore += totalRound);
-    console.log(this.playersScore);
-  } else {
+    return this.playersScore;
+  } 
+  else {
     parseInt(this.compsScore += totalRound);
-    console.log(this.compsScore);
+    return this.compsScore;
   }
-  // return this.totalScore;
 }
 
 Game.prototype.switchPlayers = function () {
@@ -45,7 +48,16 @@ if (currentPlayer === true) {
 
 Game.prototype.roll = function () {
   let roll = Math.floor(Math.random() * 6 + 1);
-  return roll;
+  if  (roll === 1){
+    console.log("you rolled a 1");
+    this.switchPlayers();
+    // alert ("You've rolled a 1");
+    // this.roundScore = 0;
+    return 0;
+    //LL: Added ^ This needs to return a number either way since its result is added to roundScore in line 10/13
+  } else{
+    return roll;
+  }
 };
 
 // Front-end logic //
@@ -59,6 +71,7 @@ Game.prototype.clickToRoll = function () {
     if (currentPlayer === true) {
     $('#player-score').text(that.roundScore);
     } else {
+      console.log("That roundscore inside clickToRoll: ", that.roundScore);
       $('#comp-score').text(that.roundScore);
     }
 
@@ -83,10 +96,18 @@ $(document).ready(function () {
   });
   $('#buttons').on('click', '#holdButton', function (event) {
     event.preventDefault();
-    game.addTotal();           //**THIS IS NEW**/
+    // game.addTotal();          
+
+    if (currentPlayer === true) {
+      $("#player-total").text(game.addTotal(totalRound));
+    } 
+    
+    if (currentPlayer === false) {
+      $("#comp-total").text(game.addTotal(totalRound));
+    }
     game.switchPlayers();
     $('#holdButton').fadeOut(1000);
-    // console.log(game.totalScore)
+    
 
   });
 });
