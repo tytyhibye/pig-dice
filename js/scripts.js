@@ -47,7 +47,7 @@ function clickToRoll() {
 
     var buttons = $("#buttons");
     buttons.empty();
-    buttons.append("<button id='holdButton'>Hold</button>");
+    buttons.append("<button id='holdButton' color:black>Hold</button>");
     
   });
 }

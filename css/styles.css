@@ -1,11 +1,25 @@
+body {
+  background-image: url("https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-2-full.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  text-align: center;
+  
+  color: rgb(248, 248, 215);
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
+}
 .jumbotron {
   text-align: center;
+  border: double brown;
+  background-color: rgba(250, 235, 215, 0.562);
 }
 .btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(22, 22, 22, 0.801);
 }
-img {
+#img {
   width: 20vw;
 }
 img:active {
@@ -20,10 +34,53 @@ img:active {
   width: 100%;
   height: 20em;
   display: block;
+  background-color: rgba(250, 235, 215, 0.562);
 }
 #comp-score-card {
   border: double brown;
   width: 100%;
   height: 20em;
   display: block;
+  background-color: rgba(250, 235, 215, 0.562);
+}
+#buttons:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(22, 22, 22, 0.801);
+}
+#buttons {
+  color: brown;
+}
+#title {
+  text-align: center;
+  font-size: 6.5em;
+  color: rgb(248, 248, 215);
+  letter-spacing: -3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
+}
+#player-score {
+  text-align: center;
+  font-size: 6.5em;
+  color: rgb(248, 248, 215);
+  letter-spacing: -3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
+}
+#comp-score {
+  text-align: center;
+  font-size: 6.5em;
+  color: rgb(248, 248, 215);
+  letter-spacing: -3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
+}
+#warning {
+  color: rgb(248, 125, 125);
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 0, 0), 0px 0px 7px #fff;
 }
