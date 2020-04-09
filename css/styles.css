@@ -44,11 +44,10 @@ img:active {
   font-size: 21px;
   cursor: pointer;
   background-color: rgb(54, 35, 35);
-  border: none;
   -webkit-transition-duration: 0.4s;
- transition-duration: 0.4s;
- border-radius: 20px;
- animation: blur 1.25s ease-in-out;
+  transition-duration: 0.4s;
+  animation: blur 1.25s ease-in-out;
+  border-radius: 20px;
 }
 @keyframes blur {
   from {
@@ -74,7 +73,6 @@ img:active {
 }
 #holdButton:active {
   background-color:  rgb(71, 47, 47);
-  box-shadow: 0 6px #667;
   transform: translateY(5px);
  }
 #title {
@@ -140,15 +138,13 @@ img:active {
   font-size: 17px;
   cursor: pointer;
   background-color: rgb(54, 35, 35);
-  border: none;
   -webkit-transition-duration: 0.4s;
- transition-duration: 0.4s;
- border-radius: 20px;
+  transition-duration: 0.4s;
+  border-radius: 20px;
 }
 
 #button1:active {
  background-color:  rgb(71, 47, 47);
- box-shadow: 0 6px #667;
  transform: translateY(5px);
  animation: blur 1.25s ease-in-out;
 }

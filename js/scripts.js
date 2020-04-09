@@ -53,7 +53,7 @@ function clickToRoll() {
 }
 $("#buttons").on("click", "#holdButton", function(){
   // game.holdFunction(this.currentPlayer);
-  $("#holdButton").fadeOut(500);
+  $("#holdButton").fadeOut(1000);
 });
 
 $(document).ready(function() {
@@ -61,9 +61,9 @@ $(document).ready(function() {
   $("form#enter-name").submit(function(event) {
     event.preventDefault();
     var playerName = $("input#name").val();
-    $("#enter-name").fadeOut(1000);
+    $("#enter-name").fadeOut(200);
     $("#player-name").html("<h3 class='tags'>" + playerName + "</h3>");
-    $(".show-game").show();
+    $(".show-game").fadeIn(2000);
   
   });
 });
