@@ -40,7 +40,8 @@ img:active {
   letter-spacing: 1px;
   font-weight: 700;
   text-transform: uppercase;
-  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;display: inline-block;
+  text-shadow: 0px 0px 12px rgb(255, 251, 0), 0px 0px 12px #fff;
+  display: inline-block;
   font-size: 21px;
   cursor: pointer;
   background-color: rgb(54, 35, 35);
@@ -133,7 +134,7 @@ img:active {
   letter-spacing: 1px;
   font-weight: 700;
   text-transform: uppercase;
-  text-shadow: 0px 0px 4px rgb(255, 251, 0), 0px 0px 7px #fff;
+  text-shadow: 0px 0px 14px rgb(255, 251, 0), 0px 0px 14px #fff;
   display: inline-block;
   font-size: 17px;
   cursor: pointer;
