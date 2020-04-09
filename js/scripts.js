@@ -7,7 +7,7 @@ function Game() {
 }
 
 Game.prototype.addToScore = function () {
-  var currentRoll = this.roll();
+  currentRoll = this.roll();
   //LL: Try to avoid global variables (any created without 'var' ahead)
   if (currentRoll != 1) {
     this.roundScore += currentRoll;
@@ -15,7 +15,7 @@ Game.prototype.addToScore = function () {
     this.roundScore = 0;
     // console.log("rolled a 1");
   }
-    var totalRound = this.roundScore;       //**THIS TRANSITION WORKS**/
+    totalRound = this.roundScore;       //**THIS TRANSITION WORKS**/
     //LL: See note on 11
     return totalRound; 
     //LL: Could just say 'return this.roundScore' or even better, don't return anything and just access Game.roundScore afterward because it will have been modified                 
