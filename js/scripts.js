@@ -3,19 +3,32 @@
 function Game() {
   this.roundScore = 0;
   this.playersScore = 0;
-  this.compScore = 0;
-  this.currentPlayer = true;
+  this.compsScore = 0;
 }
 
 Game.prototype.addToScore = function () {
   currentRoll = this.roll();
   if (currentRoll != 1) {
     this.roundScore += currentRoll;
-    // console.log(this.roundScore);
   } else if (currentRoll === 1) {
+    totalRound = 0;
     console.log("rolled a 1");
   }
+    totalRound = this.roundScore;       //**THIS IS NEW**/
+    return totalRound;                  //**THIS IS NEW**/
 };
+
+Game.prototype.addTotal = function () {
+  
+  if (this.currentPlayer === true) {      //**THIS IS NEW**/
+    parseInt(this.playersScore += totalRound);
+    console.log(this.playersScore);
+  } else {
+    parseInt(this.compsScore += totalRound);
+    console.log(this.compsScore);
+  }
+  // return this.totalScore;
+}
 
 Game.prototype.switchPlayers = function () {
   // 
@@ -29,30 +42,6 @@ if (currentPlayer === true) {
   }
   this.roundScore = 0;
 }
-  // }  return this.currentPlayer;
-
-console.log(this.currentPlayer)
-// Game.prototype.switchPlayers2 = function () {
-//   this.playerOneIsUp = !this.playerOneIsUp; // true / false
-// }
-
-// this.currentPlayerIndex = 1 - this.currentPlayerIndex;
-  
-  // this.currentPlayer = ???
-
-  // for (var i = 0; i < this.players.length; i++) {
-  //   if (i === this.players[0]) { // if (0 === 'comp') { // if (1 === 'comp') { 
-  //     currentPlayer = this.players[1];
-  //     $('#comp-score').text('0');
-  //   } else {
-  //     currentPlayer = this.players[1];
-  //     $('#player-score').text('0');
-  //   }
-  // }
-  // this.roundScore = 0;
-//   this.currentPlayer === 1 ? 2 : 1;
-// }
-// this.currentPlayer = !this.currentPlayer
 
 Game.prototype.roll = function () {
   let roll = Math.floor(Math.random() * 6 + 1);
@@ -61,8 +50,6 @@ Game.prototype.roll = function () {
 
 // Front-end logic //
 
-// game.roll();
-// game.addToScore();
 
 Game.prototype.clickToRoll = function () {
   // roll function
@@ -82,26 +69,24 @@ Game.prototype.clickToRoll = function () {
 };
 
 $(document).ready(function () {
-  let game = new Game(); // let game = new Game(0);
+  let game = new Game();
   game.clickToRoll();
   $('form#enter-name').submit(function (event) {
     event.preventDefault();
     var playerName = $('input#name').val();
     currentPlayer = true;
-    // console.log(currentPlayer);
-    // console.log(this.players);
+    totalScore = 0;
+    playersScore = 0;
     $('#enter-name').fadeOut(200);
     $('#player-name').html("<h3 class='tags'>" + playerName + '</h3>');
     $('.show-game').fadeIn(1700);
   });
   $('#buttons').on('click', '#holdButton', function (event) {
     event.preventDefault();
+    game.addTotal();           //**THIS IS NEW**/
     game.switchPlayers();
     $('#holdButton').fadeOut(1000);
-  //if(currentPlayer===""){
-  //$(player-total).text(currentPlayer.roundScore + playersScore)
-  //} else {
-  //$(comp-total).text(currentPlayer.roundScore + compScore)
-  //}
+    // console.log(game.totalScore)
+
   });
 });
