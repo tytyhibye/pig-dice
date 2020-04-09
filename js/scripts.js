@@ -62,7 +62,7 @@ $(document).ready(function() {
     event.preventDefault();
     var playerName = $("input#name").val();
     $("#enter-name").fadeToggle();
-    $("#player-name").html("<h3>" + playerName + "</h3>");
+    $("#player-name").html("<h3 class='tags'>" + playerName + "</h3>");
     $(".show-game").show();
   
   });

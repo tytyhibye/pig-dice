@@ -82,5 +82,21 @@ img:active {
   letter-spacing: 1px;
   font-weight: 700;
   text-transform: uppercase;
-  text-shadow: 0px 0px 5px rgb(255, 0, 0), 0px 0px 7px #fff;
+  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
+}
+#beware {
+  text-align: center;
+  font-size: 4em;
+  color: rgb(248, 125, 125);
+  letter-spacing: -3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
+}
+.tags {
+  color: rgb(248, 125, 125);
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
 }
