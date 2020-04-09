@@ -14,6 +14,7 @@ body {
   text-align: center;
   border: double brown;
   background-color: rgba(250, 235, 215, 0.562);
+  padding: 1%;
 }
 #img {
   width: 20vw;
