@@ -15,10 +15,6 @@ body {
   border: double brown;
   background-color: rgba(250, 235, 215, 0.562);
 }
-.btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(22, 22, 22, 0.801);
-}
 #img {
   width: 20vw;
 }
@@ -49,6 +45,30 @@ img:active {
 }
 #buttons {
   color: brown;
+  animation: blur 1.25s ease-in-out infinite;
+box-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
+@keyframes blur {
+  from {
+    box-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px rgb(184, 183, 123),
+      0px 0px 150px rgb(184, 183, 123),
+      0px 10px 100px rgb(184, 183, 123),
+      0px 10px 100px rgb(184, 183, 123),
+      0px 10px 100px rgb(184, 183, 123),
+      0px 10px 100px rgb(184, 183, 123),
+      0px -10px 100px rgb(184, 183, 123),
+      0px -10px 100px rgb(184, 183, 123);
+  }
 }
 #title {
   text-align: center;
@@ -99,4 +119,16 @@ img:active {
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: 0px 0px 5px rgb(255, 251, 0), 0px 0px 7px #fff;
+}
+#button1 {
+  width: 80px;
+  height: 50px;
+  background-color: rgb(54, 35, 35);
+  border: none;
+  border-radius: 3px;
+}
+#button1:hover {
+  color:  rgb(248, 248, 215);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 254, 254, 0.801);
 }
