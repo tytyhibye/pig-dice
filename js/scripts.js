@@ -51,8 +51,7 @@ Game.prototype.roll = function () {
   if  (roll === 1){
     console.log("you rolled a 1");
     this.switchPlayers();
-    // alert ("You've rolled a 1");
-    // this.roundScore = 0;
+    alert ("Looks like you rolled a 1, now it's the other player's turn.");
     return 0;
     //LL: Added ^ This needs to return a number either way since its result is added to roundScore in line 10/13
   } else{
@@ -71,7 +70,6 @@ Game.prototype.clickToRoll = function () {
     if (currentPlayer === true) {
     $('#player-score').text(that.roundScore);
     } else {
-      console.log("That roundscore inside clickToRoll: ", that.roundScore);
       $('#comp-score').text(that.roundScore);
     }
 
